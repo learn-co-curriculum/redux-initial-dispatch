@@ -149,7 +149,7 @@ function render(){
 dispatch({type: '@@INIT'})
 ```
 
-At the top of the file, we declare but do not assign our state, so it starts off as undefined.  Then at the bottom the file, we dispatch an action of `'@@INIT'`.  This calls our `dispatch` function, and passes it through our initial action.  Dispatch calls the `changeState` reducer.  `changeState` is executed, passing through two local variables: state and action.  Action is defined because we passed `{ type: '@@INIT' }` into dispatch.  And the second argument, `state`, comes from the first line of our file.  However, it's not defined.
+At the top of the file, we declare but do not assign our state, so it starts off as undefined.  Then at the bottom of the file, we dispatch an action of `'@@INIT'`.  This calls our `dispatch` function, and passes it through our initial action.  Dispatch calls the `changeState` reducer.  `changeState` is executed, passing through two local variables: state and action.  Action is defined because we passed `{ type: '@@INIT' }` into dispatch.  And the second argument, `state`, comes from the first line of our file.  However, it's not defined.
 
 So, with that initial dispatch we are really calling
 
