@@ -100,17 +100,17 @@ let state;
 ```javascript
 function changeState(state, action) {
 
-    switch (action.type) {
+  switch (action.type) {
 
-      case 'INCREASE_COUNT':
-        return { count: state.count + 1 }
+    case 'INCREASE_COUNT':
+      return { count: state.count + 1 }
 
-      default:
-        return state;
-    }
+    default:
+      return state;
   }
+}
 
-  function dispatch(action){
+function dispatch(action){
   state = changeState(state, action)
   render()
 }
@@ -142,15 +142,15 @@ following:
 ```javascript
 function changeState(state = { count: 0 }, action) {
 
-    switch (action.type) {
+  switch (action.type) {
 
-      case 'INCREASE_COUNT':
-        return { count: state.count + 1 }
+    case 'INCREASE_COUNT':
+      return { count: state.count + 1 }
 
-      default:
-        return state;
-    }
+    default:
+      return state;
   }
+}
 ```
 
 Now notice what happens:
@@ -168,17 +168,17 @@ Ok, pretty elegant.  How did that work?  Let's take it from the top.
 let state;
 
 function changeState(state = { count: 0 }, action) {
-    switch (action.type) {
+  switch (action.type) {
 
-      case 'INCREASE_COUNT':
-        return { count: state.count + 1 }
+    case 'INCREASE_COUNT':
+      return { count: state.count + 1 }
 
-      default:
-        return state;
-    }
+    default:
+      return state;
   }
+}
 
-  function dispatch(action){
+function dispatch(action){
   state = changeState(state, action)
   render()
 }
@@ -191,7 +191,7 @@ dispatch({type: '@@INIT'})
 ```
 
 At the top of the file, we declare but do not assign our state, so it starts off
-undefined.  Then at the bottom the file, we dispatch an action of `'@@INIT'`.
+undefined.  Then at the bottom of the file, we dispatch an action of `'@@INIT'`.
 This calls our `dispatch()` function and passes through our initial action.
 `dispatch()` calls the `changeState()` reducer.  `changeState()` is executed, passing
 through two local variables: state and action.  `action` is defined because we
